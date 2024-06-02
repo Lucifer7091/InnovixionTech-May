@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 public class calculator 
 {
@@ -8,7 +9,7 @@ public class calculator
         boolean flag=true;
         while(true)
         {
-            System.out.print("Enter operator (+, -, *, /): ");
+            System.out.print("Enter operator (+, -, *, /,%,^): ");
             char ch=sc.next().charAt(0);
             System.out.println("Enter the first number");
             double num1=sc.nextDouble();
@@ -35,8 +36,15 @@ public class calculator
                     flag =false;
                 }
                 break;
+                case '%':
+                result = num1 % num2;
+                break;
+                case '^':
+                result = Math.pow(num1, num2);
+                break;
             default:
                 System.out.println("Error: Invalid operator.");
+                flag=false;
             }
             if(flag)
             {
@@ -48,7 +56,5 @@ public class calculator
                 break;
             }
         }
-
     }
-    
 }
